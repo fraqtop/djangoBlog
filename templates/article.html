@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+{% block article %}
+<div class="row">
+    <h1>This is {{article.Title}}</h1>
+    <h3 class="col-md-6">{{ article.Text }}</h3>
+    <img class="img-rounded" style="vertical-align: middle" src="{% static article.Pic %}">
+</div>
+<p><img class="like" src="{% static "like.png" %}"> {{ article.Likes }}</p>
+<hr>
+    <h1>Comments</h1>
+{% for comment in comments %}
+<h4>{{ comment.Text }}</h4>
+{% endfor %}
+<form action="." method="post">
+        {% csrf_token %}
+        {{ form }}
+    <div class="form-group">
+        <input type="submit" class="btn btn-default" value="add comment">
+    </div>
+</form>
+
+{% endblock %}

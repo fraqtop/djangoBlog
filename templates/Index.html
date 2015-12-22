@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+{% block article %}
+
+{% for Article in articles %}
+    <div class="row col-md-7 art" id="{{ Article.id }}">
+        <h3>{{ Article.Date }}</h3>
+        <a href="/thisone/{{ Article.id }}">
+            <img class="img-rounded" src="{% static Article.Pic %}">
+            <h2>{{ Article.Title }}</h2>
+        </a>
+        <img class="like" id="{{ Article.id }}" src="{% static "like.png" %}">
+        <p>
+            {{ Article.Likes }}
+        </p>
+    </div>
+{% endfor %}
+
+{% endblock %}
