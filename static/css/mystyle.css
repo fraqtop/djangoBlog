@@ -31,13 +31,32 @@ img{
     height: 250px;
 }
 
-textarea{
-    max-width: 50%;
-}
-
 .logo{
     width: 40Px;
     height: 40Px;
     margin-top: 10%;
-    margin-lft: -50%;
+    margin-left: -50%;
 }
+img.img-rounded{
+    border: 3Px solid rgba(152, 148, 26, 0.84);
+}
+
+body{
+    background-attachment: fixed;
+}
+div.navbar{
+    position: fixed;
+    width: 100%;
+}
+.wrapper{
+    position: static;
+    width: 100%;
+    height: 70Px;
+}
+
+.btn-group-vertical>a>div{
+    width: 20%;
+    position: fixed;
+    margin-bottom: 20Px;
+}
+

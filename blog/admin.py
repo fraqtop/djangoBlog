@@ -9,7 +9,7 @@ class ArticleInline (admin.StackedInline):
 
 
 class ArticleAdmin (admin.ModelAdmin):
-    fields = ['Title','Text','Date','Pic']
+    fields = ['Title','Text','Date','Pic','Category']
     inlines = [ArticleInline]
     list_filter = ['Date']
 

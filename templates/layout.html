@@ -7,7 +7,7 @@
     <script type="text/javascript" src="{% static "/static/static/node_modules/jquery/dist/jquery.js" %}"></script>
     <script type="text/javascript" src="{% static "/static/static/js/hello.js" %}"></script>
     <meta charset="UTF-8">
-    <title>My blog</title>
+    <title>{{ title }}</title>
 </head>
 <body background="{% static "static/back.jpg" %}">
     <div class="navbar navbar-inverse navbar-static-top">
@@ -22,16 +22,29 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Search</a></li>
+                    <li><a href="/add/">New article</a> </li>
                 </ul>
                 {% include 'mylog.html' %}
             </div>
         </div>
     </div>
+    <div class="wrapper"></div>
+    <div class="col-md-6 col-md-offset-1">
+        {% block articles %}
+        {% endblock %}
+    </div>
+    {% if title == 'Main wood page' %}
+        <div class="col-md-3 col-md-offset-2">
+            {% include 'Categories.html' %}
+        </div>
+    {% endif %}
     <div class="container">
         {% block article %}
         {% endblock %}
-    {% block lg %}
-    {% endblock %}
+    </div>
+    <div class="col-md-offset-4 col-md-3">
+        {% block lg %}
+        {% endblock %}
     </div>
 </body>
 </html>

@@ -1,9 +1,10 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
-{% block article %}
+{% block articles %}
 
 {% for Article in articles %}
-    <div class="row col-md-7 art" id="{{ Article.id }}">
+    <div class="row art">
+    <div class="col-md-offset-1" id="{{ Article.id }}">
         <h3>{{ Article.Date }}</h3>
         <a href="/thisone/{{ Article.id }}">
             <img class="img-rounded" src="{% static Article.Pic %}">
@@ -13,6 +14,7 @@
         <p>
             {{ Article.Likes }}
         </p>
+    </div>
     </div>
 {% endfor %}
 
